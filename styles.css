@@ -1,0 +1,248 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* ==============
+     algemeen  
+================*/
+
+::selection {
+	background: #b3d4fc;
+}
+
+body {
+	font-family: sans-serif;
+	display: grid;
+	/* grid-template-columns: 1em 1fr 1em; */
+	line-height: 1.6;
+	font-size: 14px;
+}
+
+.body-container {
+	display: grid;
+	grid-template-columns: 1em 1fr 1em;
+}
+
+header {
+	grid-column: 1 / -1;
+	padding: 2em 0;
+	color: white;
+	background: #007bc7;
+	text-align: center;
+}
+
+.container {
+	grid-column: 2 / span 1;
+	display: flex;
+	flex-direction: column;
+	background: white;
+}
+
+h2,
+h3 {
+	color: #114476;
+}
+
+h3 {
+	font-size: 24px;
+	font-weight: 400;
+	letter-spacing: .5px;
+	margin-bottom: .5em;
+	padding: 0;
+}
+/* ======================
+        CONTACT  
+=========================*/
+
+/* inleiding */
+
+.inleiding-contact {
+	margin-bottom: 3em;
+	grid-column: 2 / span 1;
+}
+
+.inleiding-contact h2 {
+	font-size: 26px;
+	margin: 1.5em 0;
+}
+
+.inleiding-contact p {
+	font-style: italic;
+}
+
+/* card */
+
+.contact-card {
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: 0 0 10px #dddddd;
+	margin-bottom: 2em;
+}
+
+.contact-card-info {
+	padding: 1em;
+}
+
+.contact-card-img-link-container {
+	transition: all .2s ease-in-out;
+}
+
+.contact-card-img-link-container:hover {
+	cursor: pointer;
+}
+
+.contact-card-img-link-container > img {
+	opacity: 1;
+}
+
+.contact-card-img-link-container:hover > img {
+	opacity: .8;
+}
+
+.contact-card-img-link-container:hover .contact-card-link-first {
+	background: #014f80;
+}
+
+.contact-card-image {
+	display: block;
+	max-width: 100%;
+}
+
+.contact-card-link-first,
+.contact-card-info {
+	padding: 1.25em 1em;
+}
+
+.contact-card-link-first {
+	display: inline-block;
+	width: 100%;
+	background: #007bc7;
+	color: white;
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: .3px;
+	text-decoration: none;
+	transition: all .3s ease-in-out;
+}
+
+.contact-card-content {
+	color: #3e3e3e;
+}
+
+.contact-card-link-second {
+	display: inline-block;
+	margin: 2em 0;
+	color: #01689b;
+	text-decoration: none;
+	transition: all .2s ease-in-out;
+}
+
+.contact-card-link-second::before {
+	content: '\003e';
+	font-size: 14px;
+	margin: 0px 2px 0px 0px;
+}
+
+.contact-card-link-second:hover {
+	color: #3e3e3e;
+}
+
+.footer {
+	grid-column: 1 / -1;
+	font-size: 32px;
+	text-align: center;
+	color: white;
+	background: #e5f1f9;
+	padding: 2em;
+	margin-top: 2em;
+}
+
+/* 'geef mening' driehoek rechtsonder scherm */
+
+.geef-mening {
+	position: fixed;
+	border-bottom: 150px solid #b85c00;
+	border-left: 150px solid transparent;
+	right: 0;
+	bottom: 0;
+	margin: 5px;
+	color: white;
+	cursor: pointer;
+	z-index: 100;
+}
+
+.geef-mening p {
+	position: fixed;
+	bottom: 55px;
+	right: 125px;
+	transform: translate(100%) rotate(-45deg);
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.fas {
+	position: fixed;
+	bottom: 24px;
+	right: 20px;
+	font-style: 24px;
+}
+
+@media (min-width: 695px) {
+	body {
+		grid-template-columns: minmax(1em, 1fr) 640px minmax(1em, 1fr);
+		background: #f2f8fc;
+	}
+	.body-container {
+		grid-column: 2 / span 1;
+		box-shadow: 0 0 10px #dddddd;
+		margin: 1.5em 0;
+		border-radius: 3px;
+		display: block;
+	}
+
+	header {
+		border-radius: 3px 3px 0 0;
+	}
+
+	.footer {
+		grid-column: 2 / span 1;
+	}
+
+	.container {
+		padding: 0 2em;
+		border-bottom: 15px solid #b3d4fc;
+		border-top: 15px solid #b3d4fc;
+	}
+
+	.contact-cards-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+	}
+
+	.contact-cards-container h3 {
+		grid-column: 1 / -1;
+	}
+
+	.footer {
+		margin-top: 0;
+	}
+}
+
+@media (min-width: 950px) {
+	body {
+		grid-template-columns: minmax(1em, 1fr) 900px minmax(1em, 1fr);
+	}
+
+	.container {
+		max-width: 900px;
+	}
+
+	.contact-cards-container {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
